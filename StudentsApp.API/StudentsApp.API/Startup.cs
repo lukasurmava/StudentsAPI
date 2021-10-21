@@ -52,6 +52,7 @@ namespace StudentsApp.API
                         Name = "Luka Surmava"
                     }
                 });
+                services.AddCors();
             });
         }
 
@@ -63,6 +64,11 @@ namespace StudentsApp.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            });
+
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
@@ -70,7 +76,7 @@ namespace StudentsApp.API
                 options.RoutePrefix = string.Empty;
             });
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseAuthorization();
