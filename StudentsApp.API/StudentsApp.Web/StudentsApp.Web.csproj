@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\fetch-students\fetch-students-search.component.ts" />
     <None Remove="ClientApp\src\app\fetch-students\fetch-students-view.component.ts" />
     <None Remove="ClientApp\src\app\fetch-students\fetch-students.component.ts" />
     <None Remove="ClientApp\src\app\shared\student-model.ts" />
@@ -31,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\fetch-students\fetch-students-search.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\fetch-students\fetch-students-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\fetch-students\fetch-students.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\student-model.ts" />

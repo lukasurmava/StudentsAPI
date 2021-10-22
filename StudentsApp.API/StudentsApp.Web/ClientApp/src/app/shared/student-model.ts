@@ -5,5 +5,6 @@ export class Student {
   surname: string = '';
     dateOfBirth: Date;
     idNumber: string='';
-    gender: string='';
+  gender: string = '';
+  searchString: string = '';
 }

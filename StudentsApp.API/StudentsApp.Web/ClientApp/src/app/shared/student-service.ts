@@ -35,15 +35,51 @@ export class StudentService {
     //return this.http.delete(`${this.baseURL}/${id}`);
   }
 
-  refreshList() {
-    this.http.get("http://localhost:5000/getall")
-      .subscribe(res =>
+  getDataBySearchString(searchString: string) {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body:
       {
+        searchString: `${searchString}`,
+      },
+    };
+    this.http.get(this.baseURL, options)
+      .subscribe(res => {
         this.list = res["data"] as Student[];
-        
       }, err => {
-          console.log(err);
+        console.log(err);
       });
-     
+
+  }
+  refreshList(searchString: string = null)
+  {
+    if (searchString == null)
+      this.http.get("http://localhost:5000/getall")
+        .subscribe(res => {
+          this.list = res["data"] as Student[];
+
+        }, err => {
+          console.log(err);
+        });
+    else
+    {
+      const options = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+        }),
+        body:
+        {
+          searchString: `${searchString}`,
+        },
+      };
+      this.http.get(this.baseURL, options)
+        .subscribe(res => {
+          this.list = res["data"] as Student[];
+        }, err => {
+          console.log(err);
+        });
+    }
   }
 }

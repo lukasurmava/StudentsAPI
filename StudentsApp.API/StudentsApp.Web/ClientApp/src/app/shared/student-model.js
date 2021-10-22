@@ -7,6 +7,7 @@ var Student = /** @class */ (function () {
         this.surname = '';
         this.idNumber = '';
         this.gender = '';
+        this.searchString = '';
     }
     return Student;
 }());

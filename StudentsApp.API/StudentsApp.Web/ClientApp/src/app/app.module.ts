@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 //import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FetchStudentsComponent } from './fetch-students/fetch-students.component';
 import { FetchStudentsViewComponent } from './fetch-students/fetch-students-view.component';
+import { FetchStudentsSearchComponent } from './fetch-students/fetch-students-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FetchStudentsViewComponent } from './fetch-students/fetch-students-view
     CounterComponent,
     //FetchDataComponent,
     FetchStudentsComponent,
-    FetchStudentsViewComponent
+    FetchStudentsViewComponent,
+    FetchStudentsSearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
